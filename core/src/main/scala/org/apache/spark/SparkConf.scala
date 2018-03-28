@@ -434,6 +434,7 @@ class SparkConf(loadDefaults: Boolean) extends Cloneable with Logging with Seria
   private[spark] def contains(entry: ConfigEntry[_]): Boolean = contains(entry.key)
 
   /** Copy this object */
+  // 拷贝sparkconf对象
   override def clone: SparkConf = {
     val cloned = new SparkConf(false)
     settings.entrySet().asScala.foreach { e =>
